@@ -14,8 +14,7 @@
     <title>tokoonline</title>
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/extra-libs/multicheck/multicheck.css') }}">
-    <link href="{{ asset('backend/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')
-}}" rel="stylesheet">
+    <link href="{{ asset('backend/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/dist/css/style.min.css') }}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -83,8 +82,7 @@ class="light-logo" /> -->
                     <!-- ============================================================== -->
                     <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
                         data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle
-navigation"><i class="ti-more"></i></a>
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -94,8 +92,7 @@ navigation"><i class="ti-more"></i></a>
                     <!-- toggle and nav items -->
                     <!-- ============================================================== -->
                     <ul class="navbar-nav float-left mr-auto">
-                        <li class="nav-item d-none d-md-block"><a class="nav-link
-sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="minisidebar"><i
+                        <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="minisidebar"><i
                                     class="mdi mdi-menu font-24"></i></a></li>
                         <!-- ==============================================================
 -->
@@ -138,8 +135,7 @@ sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebart
                         <!-- ==============================================================
 -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect
-waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 @if (Auth::user()->foto)
                                     <img src="{{ asset('storage/img-user/' . Auth::user()->foto) }}" alt="user"
                                         class="rounded-circle" width="31">
@@ -148,11 +144,8 @@ waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-exp
                                         class="rounded-circle" width="31">
                                 @endif
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right user-dd
-animated">
-                                <a class="dropdown-item" href="{{
-    route('backend.user.edit', Auth::user()->id) }}"><i class="ti-user m-r-5 m-l-5"></i> Profil
-                                    Saya</a>
+                            <div class="dropdown-menu dropdown-menu-right user-dd animated">
+                                <a class="dropdown-item" href="{{ route('backend.user.edit', Auth::user()->id) }}"><i class="ti-user m-r-5 m-l-5"></i> Profil Saya</a>
                                 <a class="dropdown-item" href=""
                                     onclick="event.preventDefault(); document.getElementById('keluar-app').submit();"><i
                                         class="fa fa-power-off m-r-5 m-l-5"></i> Keluar</a>
@@ -180,23 +173,18 @@ animated">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-30">
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect
-waves-dark sidebar-link" href="{{ route('backend.beranda') }}" aria-expanded="false"><i
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('backend.beranda') }}" aria-expanded="false"><i
                                     class="mdi mdi-view-dashboard"></i><span class="hide-menu">Beranda</span></a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect
-waves-dark sidebar-link" href="{{ route('backend.user.index') }}" aria-expanded="false"><i
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('backend.user.index') }}" aria-expanded="false"><i
                                     class="mdi mdi-account"></i><span class="hide-menu">User</span></a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waveseffect waves-dark"
-                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdishopping"></i><span
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-shopping"></i><span
                                     class="hide-menu">Data Produk </span></a>
                             <ul aria-expanded="false" class="collapse first-level">
-                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i
-                                            class="mdi mdi-chevron-right"></i><span class="hide-menu"> Kategori
-                                        </span></a>
+                                <li class="sidebar-item"><a href="{{ route('backend.kategori.index') }}" class="sidebar-link"><i class="mdi mdi-chevron-right"></i><span class="hidemenu"> Kategori </span></a>
                                 </li>
-                                WEB PROGRAMMING II 111
                                 <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i
                                             class="mdi mdi-chevron-right"></i><span class="hide-menu"> Produk
                                         </span></a>
@@ -258,7 +246,6 @@ waves-dark sidebar-link" href="{{ route('backend.user.index') }}" aria-expanded=
         </div>
         <!-- ============================================================== -->
         <!-- End Page wrapper -->
-        WEB PROGRAMMING II 112
         <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->

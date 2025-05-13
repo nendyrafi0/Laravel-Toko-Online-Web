@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\kategori;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 
@@ -28,23 +29,10 @@ class DatabaseSeeder extends Seeder
             'role' => '0',
             'status' => 1,
             'hp' => '085172278849',
-            'password' => bcrypt('Nendyrafi1#'),
+            'password' => bcrypt('Nendyrafi1#'), 
         ]);
-        User::create([
-            'nama' => 'Kim Ji Won (LIZ IVE)',
-            'email' => 'kimjiwon21@gmail.com',
-            'role' => '0',
-            'status' => 1,
-            'hp' => '081234567891',
-            'password' => bcrypt('Nendyrafi1#'),
-        ]);
-        User::create([
-            'nama' => 'Michael Gorbachev',
-            'email' => 'Udahmeninggal@gmail.com',
-            'role' => '0',
-            'status' => 1,
-            'hp' => '081234567881',
-            'password' => bcrypt('Nendyrafi1#'),
+        kategori::create([
+            'nama_kategori' => 'Mochi',
         ]);
     }
 }
