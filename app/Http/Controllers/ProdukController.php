@@ -79,7 +79,7 @@ class ProdukController extends Controller
             $validatedData['foto'] = $originalFileName;
         }
         $validatedData['user_id'] = auth()->id();
-        Produk::create($validatedData);
+        Produk::create($validatedData, $messages);
         return redirect()->route('backend.produk.index')->with('success', 'Data berhasil tersimpan');
     }
 
