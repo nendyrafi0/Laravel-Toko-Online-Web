@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             'status' => 1,
             'hp' => '0812345678901',
             'password' => bcrypt('P@55word'),
-            'foto' => 'admin.jpg',
+            'foto' => 'img-default.jpg',
         ]);
         User::create([
             'nama' => 'Nendy Rafi Akmal M',
@@ -29,10 +29,23 @@ class DatabaseSeeder extends Seeder
             'role' => '0',
             'status' => 1,
             'hp' => '085172278849',
-            'password' => bcrypt('Nendyrafi1#'), 
+            'password' => bcrypt('Ayamterbang1#'), 
         ]);
-        kategori::create([
+
+        Kategori::create([
+            'nama_kategori' => 'Brownies',
+        ]);
+        Kategori::create([
+            'nama_kategori' => 'Combro',
+        ]);
+        Kategori::create([
+            'nama_kategori' => 'Dawet',
+        ]);
+        Kategori::create([
             'nama_kategori' => 'Mochi',
+        ]);
+        Kategori::create([
+            'nama_kategori' => 'Wingko',
         ]);
     }
 }
