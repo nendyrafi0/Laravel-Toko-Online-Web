@@ -158,4 +158,38 @@ class UserController extends Controller
         $user->delete();
         return redirect()->route('backend.user.index')->with('success', 'Data berhasil dihapus');
     }
+
+    public function formUser()
+    {
+        return view('backend.v_user.form', [
+            'judul' => 'Laporan Data User',
+        ]);
+    }
+    public function cetakUser(Request $request)
+    {
+        // Validasi input
+        $request->validate([
+            'tanggal_awal' => 'required|date',
+            'tanggal_akhir' => 'required|date|after_or_equal:tanggal_awal',
+        ], [
+            'tanggal_awal.required' => 'Tanggal Awal harus diisi.',
+            'tanggal_akhir.required' => 'Tanggal Akhir harus diisi.',
+            'tanggal_akhir.after_or_equal' => 'Tanggal Akhir harus lebih besar atau sama dengan Tanggal Awal.',
+        ]);
+
+        // Tambahkan waktu untuk range full-day
+        $tanggalAwal = $request->input('tanggal_awal') . ' 00:00:00';
+        $tanggalAkhir = $request->input('tanggal_akhir') . ' 23:59:59';
+
+        $user = User::whereBetween('created_at', [$tanggalAwal, $tanggalAkhir])
+                    ->orderBy('id', 'desc')
+                    ->get();
+
+        return view('backend.v_user.cetak', [
+            'judul' => 'Laporan User',
+            'tanggalAwal' => $request->input('tanggal_awal'),
+            'tanggalAkhir' => $request->input('tanggal_akhir'),
+            'cetak' => $user
+        ]);
+    }
 }

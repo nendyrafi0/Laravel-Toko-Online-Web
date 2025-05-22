@@ -14,12 +14,10 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Foto</label>
-                                        <img class="foto-preview">
-                                        <input type="file" name="foto" class="form-control
-    @error('foto') is-invalid @enderror" onchange="previewFoto()">
+                                        <img id="foto-preview" class="foto-preview" src="" alt="Preview Foto" style="max-width: 300px; display: none; margin-bottom: .5rem;">
+                                        <input type="file" name="foto" class="form-control @error('foto') is-invalid @enderror" onchange="previewFoto()">
                                         @error('foto')
-                                                                                <div class="invalid-feedback alert-danger">{{ $message
-                                            }}</div>
+                                            <div class="invalid-feedback alert-danger">{{ $message}}</div>
                                         @enderror
                                     </div>
                                 </div>
@@ -28,14 +26,11 @@
                                         <label>Hak Ases</label>
                                         <select name="role" class="form-control @error('role')
                                         is-invalid @enderror">
-                                            <option value="" {{ old('role') == '' ? 'selected'
-        : '' }}> - Pilih Hak Akses
+                                            <option value="" {{ old('role') == '' ? 'selected' : '' }}> - Pilih Hak Akses
                                                 -
                                             </option>
-                                            <option value="1" {{ old('role') == '1' ?
-        'selected' : '' }}> Super Admin</option>
-                                            <option value="0" {{ old('role') == '0' ?
-        'selected' : '' }}> Admin
+                                            <option value="1" {{ old('role') == '1' ? 'selected' : '' }}> Super Admin</option>
+                                            <option value="0" {{ old('role') == '0' ? 'selected' : '' }}> Admin
                                             </option>
                                         </select>
                                         @error('role')
@@ -46,8 +41,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Nama</label>
-                                        <input type="text" name="nama" value="{{ old('nama')
-    }}" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukkan Nama">
+                                        <input type="text" name="nama" value="{{ old('nama') }}" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukkan Nama">
                                         @error('nama')
                                             <span class="invalid-feedback alert-danger" role="alert">
                                                 {{ $message }}
@@ -56,8 +50,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input type="text" name="email" value="{{ old('email')
-    }}" class="form-control @error('email') is-invalid @enderror" placeholder="Masukkan Email">
+                                        <input type="text" name="email" value="{{ old('email')  }}" class="form-control @error('email') is-invalid @enderror" placeholder="Masukkan Email">
                                         @error('email')
                                             <span class="invalid-feedback alert-danger" role="alert">
                                                 {{ $message }}
@@ -66,8 +59,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>HP</label>
-                                        <input type="text" onkeypress="return
-    hanyaAngka(event)" name="hp" value="{{ old('hp') }}" class="form-control @error('hp') isinvalid @enderror"
+                                        <input type="text" onkeypress="return hanyaAngka(event)" name="hp" value="{{ old('hp') }}" class="form-control @error('hp') isinvalid @enderror"
                                             placeholder="Masukkan Nomor HP">
                                         @error('hp')
                                             <span class="invalid-feedback alert-danger" role="alert">
@@ -108,4 +100,25 @@
         </div>
     </div>
     <!-- contentAkhir -->
+
+
 @endsection
+
+<script>
+  function previewFoto() {
+    const input = document.querySelector('input[name="foto"]');
+    const preview = document.getElementById('foto-preview');
+
+    if (!input.files || !input.files[0]) {
+      preview.style.display = 'none';
+      preview.src = '';
+      return;
+    }
+
+    const file = input.files[0];
+    const url  = URL.createObjectURL(file);
+
+    preview.src = url;
+    preview.style.display = 'block';
+  }
+</script>

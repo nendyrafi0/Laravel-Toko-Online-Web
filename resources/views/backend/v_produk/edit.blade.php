@@ -17,20 +17,16 @@
                                         <label>Foto</label>
                                         {{-- view image --}}
                                         @if ($edit->foto)
-                                                                                <img src="{{ asset('storage/img-produk/' . $edit->foto)
-                                            }}" class="foto-preview" width="100%">
-                                                                                <p></p>
+                                            <img src="{{ asset('storage/img-produk/' . $edit->foto) }}" class="foto-preview" width="100%"><p></p>
                                         @else
                                             <img src="{{ asset('storage/img-produk/imgdefault.jpg') }}" class="foto-preview"
                                                 width="100%">
                                             <p></p>
                                         @endif
                                         {{-- file foto --}}
-                                        <input type="file" name="foto" class="form-control
-    @error('foto') is-invalid @enderror" onchange="previewFoto()">
+                                        <input type="file" name="foto" class="form-control @error('foto') is-invalid @enderror" onchange="previewFoto()">
                                         @error('foto')
-                                                                                <div class="invalid-feedback alert-danger">{{ $message
-                                            }}</div>
+                                            <div class="invalid-feedback alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>

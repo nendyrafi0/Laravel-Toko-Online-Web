@@ -77,12 +77,11 @@
                                                 class="ti-pencil"></i></span>
                                     </div>
                                     <input type="password" name="password"
-                                        class="formcontrol form-control-lg @error('password') is-invalid @enderror"
+                                        class="form-control form-control-lg @error('password') is-invalid @enderror"
                                         placeholder="Masukkan Password" aria-label="Password" aria-describedby="basic-addon1">
                                     @error('password')
                                         <span class="invalid-feedback alert-danger" role="alert">
                                             {{$message}}
-                                            WEB PROGRAMMING II 63
                                         </span>
                                     @enderror
                                 </div>

@@ -9,8 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{
-    asset('backend/image/icon_univ_bsi.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('backend/image/icon_univ_bsi.png') }}">
     <title>tokoonline</title>
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/extra-libs/multicheck/multicheck.css') }}">
@@ -66,11 +65,9 @@
                         </span>
                         <!-- Logo icon -->
                         <!-- <b class="logo-icon"> -->
-                        <!--You can put here icon as well // <i class="wi wi-sunset"></i>
-//-->
+                        <!--You can put here icon as well // <i class="wi wi-sunset"></i>//-->
                         <!-- Dark Logo icon -->
-                        <!-- <img src="assets/images/logo-text.png" alt="homepage"
-class="light-logo" /> -->
+                        <!-- <img src="assets/images/logo-text.png" alt="homepage"class="light-logo" /> -->
                         <!-- </b> -->
                         <!--End Logo icon -->
                     </a>
@@ -198,6 +195,12 @@ class="light-logo" /> -->
                                         class="sidebar-link">
                                         <i class="mdi mdi-chevron-right"></i><span class="hide-menu"> Produk </span></a>
                                 </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Laporan </span></a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item"><a href="{{ route('backend.laporan.formuser') }}" class="sidebar-link"><i class="mdi mdi-chevron-right"></i><span class="hide-menu"> User </span></a></li>
+                                <li class="sidebar-item"><a href="{{ route('backend.laporan.formproduk') }}" class="sidebar-link"><i class="mdi mdi-chevron-right"></i><span class="hide-menu"> Produk </span></a></li>
                             </ul>
                         </li>
                     </ul>
